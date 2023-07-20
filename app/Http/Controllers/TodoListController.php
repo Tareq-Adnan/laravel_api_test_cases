@@ -38,6 +38,7 @@ class TodoListController extends Controller
 
     public function destroy(TodoList $todo_list)
     {
+        
         $todo_list->delete();
         return response('', Response::HTTP_NO_CONTENT);
     }

@@ -11,4 +11,15 @@ class TodoList extends Model
 
    protected $fillable=['name'];
 
+   public static function boot(){
+    parent::boot();
+    // self::deleting(function($todo_list){
+    //     $todo_list->tasks()->delete();
+    // });
+   }
+
+   public function tasks(){
+    return $this->hasMany(Task::class);
+   }
+
 }
